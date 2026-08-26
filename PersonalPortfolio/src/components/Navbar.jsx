@@ -1,19 +1,20 @@
-import { useRef, useEffect, useState } from 'react';
+import { Link, useLocation } from "react-router-dom"; 
+import { useState, useEffect } from "react"; 
 
 export default function Navbar() {
   const [blink, setBlink] = useState(true);
-  const [active, setActive] = useState('home');
+  const location = useLocation(); 
 
   useEffect(() => {
     const id = setInterval(() => setBlink((b) => !b), 530);
     return () => clearInterval(id);
   }, []);
 
-  const links = [ 
-    { id: 'home', label: 'HOME' },
-    { id: 'Resume', label: 'RESUME' },
-    { id: 'projects', label: 'PROJECTS' },
-    { id: 'contact', label: 'CONTACT' }
+   const links = [
+    { path: "/", label: "HOME" },
+    { path: "/Projects", label: "PROJECTS" },
+    { path: "/Resume", label: "RESUME" },
+    { path: "/contact", label: "CONTACT" },
   ];
 
   return ( 
@@ -57,30 +58,31 @@ export default function Navbar() {
           </div>
 
       <ul style={{ display: "flex", gap: "24px", fontSize: "20px", listStyle: "none", margin: 0, padding: 0 }}>
-        {links.map((link) => (
-          <li key={link.id}>
-            <button 
-            onClick={() => setActive(link.id)}
-            className={`nav-link ${active === link.id ? "active crt-glow" : ""}`}
-            style={{
-            color: active === link.id ? "#5b8dd6" : "#3a5d8f",
-            letterSpacing: "0.1em",
-            whiteSpace: "nowrap",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            padding: 0,
-            fontFamily: "inherit",
-                }}
-            >
+          {links.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={`nav-link ${isActive ? "active crt-glow" : ""}`}
+                    style={{
+                      color: isActive ? "#5b8dd6" : "#3a5d8f",
+                      letterSpacing: "0.1em",
+                      whiteSpace: "nowrap",
+                      textDecoration: "none",
+                      fontFamily: "inherit",
+                    }}
+                  >
+       
               {link.label}
-            </button>
-          </li>
-        ))}
-        </ul>
+              </Link>
+                  </li>
+                 );
+                })}
+           </ul>
         </div>
       </nav>
     </div>
-  )
+  );
 }
 
