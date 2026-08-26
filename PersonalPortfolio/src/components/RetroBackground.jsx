@@ -68,12 +68,12 @@ export default function RetroBackground({
         flicker = true,
         noise = true,
         bezel = true, 
-        casing = "beigeMac", 
+        casting = "beigeMac", 
         label = "MACINTOCH",
         children,
 }) { 
     const colors = THEMES[theme] || THEMES.dimblue;
-    const shell = CASINGS[casing] || CASINGS.beigeMac;
+    const shell = CASTING[casting] || CASTING.beigeMac;
 
     const screenEffects = ( 
         <>
@@ -304,7 +304,7 @@ export default function RetroBackground({
 }
  
 export function RetroNavBar({
-  title = "PORTFOLIO.APP",
+  title = "Tayler Caufield",
   tabs = [],
   activeIndex = 0,
   onSelect = () => {},
