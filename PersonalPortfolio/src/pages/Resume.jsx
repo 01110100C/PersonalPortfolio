@@ -1,5 +1,5 @@
-function About() {
-  return <div>About Page</div>
+function Resume() {
+  return <div>Resume  Page</div>
 }
 
-export default About
+export default Resume

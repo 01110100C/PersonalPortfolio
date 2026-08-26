@@ -40,9 +40,46 @@ export default function Navbar() {
 
         .nav-link:hover::before, 
         .nav-link.active:::before { opacity: 1; }
-        
+
         `}
       </style>
+
+      <nav className="scanline-bg" style={{ 
+        backgroundColor: "#000",
+        borderBottom: "2px solid #3a5d8f", 
+        padding: "12px 16px", 
+        }}>
+        <div style={{ maxWidth: "1024px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
+          {/* Logo */}
+          <div className="crt-glow" style={{ color: "#5b8dd6", fontSize: "24px", letterSpacing: "0.15em", whiteSpace: "nowrap" }}>
+            {">"}
+            <span style={{ opacity: blink ? 1 : 0 }}>_</span>
+          </div>
+
+      <ul style={{ display: "flex", gap: "24px", fontSize: "20px", listStyle: "none", margin: 0, padding: 0 }}>
+        {links.map((link) => (
+          <li key={link.id}>
+            <button 
+            onClick={() => setActive(link.id)}
+            className={`nav-link ${active === link.id ? "active crt-glow" : ""}`}
+            style={{
+            color: active === link.id ? "#5b8dd6" : "#3a5d8f",
+            letterSpacing: "0.1em",
+            whiteSpace: "nowrap",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+            fontFamily: "inherit",
+                }}
+            >
+              {link.label}
+            </button>
+          </li>
+        ))}
+        </ul>
+        </div>
+      </nav>
     </div>
   )
 }
