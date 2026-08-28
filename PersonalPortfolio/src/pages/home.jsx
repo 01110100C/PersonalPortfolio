@@ -7,9 +7,7 @@ function Home() {
   
   <div style={{ display: "flex", flexDirection: "row", gap: "75px", flexWrap: "wrap" }}>
   <Card title="ABOUT ME"> 
-     Im currently in my last quarter of my bachelors degree for Software Development. 
-     I enjoy building full stack web and mobile applications. Im working as a data center technician at AWS where i get to work
-     hands on with networking, troubleshooting, scripts, and computer hardware. 
+      
   </Card>
   <Card title="TECH STACK">
     <ul>
@@ -24,6 +22,7 @@ function Home() {
       <li> Gaming </li>
       <li> Hiking </li>
       <li> Bowling </li>
+      <li> Computer Hardware </li>
     </ul>
   </Card>
  </div> 
