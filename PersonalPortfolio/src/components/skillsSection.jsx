@@ -53,5 +53,32 @@ const categories = [
 
 // link images to variable name 
 const iconImages = {
-    
-}
+    Html: Html, 
+    CSS: CSS, 
+    JavaScript: Javascript, 
+    ReactLogo: ReactLogo, 
+    Python: Python, 
+    Cplus: Cplus, 
+    Java: Java, 
+    Git: Git, 
+    GitHub: Github, 
+    MySQL: Mysql, 
+    AWS: AWS, 
+    Azure: Azure, 
+    Docker: Docker, 
+    Redis: Redis, 
+};
+
+const SkillBar = ({ level }) => ( 
+    <div className="w-full h-3 bg-seconddary/20 rounded-full overflow-hidden"> 
+    <motion.div 
+    initial = {{ width: 0 }}
+    animate = {{ width: `${level}%` }}
+    transition = {{ duration: 1.5, delay: 0.2 }}
+    className = { `h-full rounded-full ${ level > 75 ? 'bg-gradient-to-r from-green-400 to-emerald-500':
+        level > 50 ? 'bg-gradient-to-r from-yellow-400 to-amber-500' : 
+        'bg-gradient-to-r from-red-400 to-pink-500'
+    }`}
+    />
+    </div>
+);
