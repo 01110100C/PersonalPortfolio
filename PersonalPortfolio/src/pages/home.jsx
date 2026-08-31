@@ -1,5 +1,5 @@
 import Card from "./Card";
-import skillsSection from "./skillsSection";
+import SkillsSection from "./skillsSection";
 function Home() {
   return (
     <>
@@ -11,9 +11,7 @@ function Home() {
       
   </Card>
   <Card title="TECH STACK">
-    <skillsSection>
-
-    </skillsSection>
+    <SkillsSection />
   </Card>
   <Card title="HOBBIES">
     <ul> 
