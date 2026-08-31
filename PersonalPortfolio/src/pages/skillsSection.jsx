@@ -141,7 +141,71 @@ return (
                     Technologies I've learned and mastered 
                 </p>
             </motion.div>
+
+            <div className="flex flex-wrap justify-center gap-3 mb-16">
+                {categories.map((category) => (
+                    <motion.button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-6 py-2.5 rounded-full font-medium border border-transparent hover:shadow-lg ${ 
+                activeCategory === category.id 
+                ? `${category.color} text-white shadow-md`
+                : "bg-secondary/50 text-foreground hover:bg-secondary/70"
+                }`} 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                >
+                    {category.label}
+                    </motion.button>
+            ))} 
+            </div>
+
+            {activeCategory === "all" ? (
+                <InfiniteScrollSkills skills={skills} />
+            ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <AnimatePresence mode="popLayout">
+                        {filteredSkills.map((skills) => (
+                            <motion.div
+                            key={skill.name}
+                            layout 
+                            initial={{ opacity: 0; scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            className="bg-card p-6 rounded-2x1 border border-border/30 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg group"
+                            > 
+                            <div className="felx items-start gap-4 mb-5">
+                                <div className="w-12 h-12 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center">
+                                <img src={iconImages[skill.icon]} alt={skill.name} className="w-6 h-6 object-contain" />
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex justify-between items-center mb-2">
+                                        <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                                            {skill.name}
+                                        </h3>
+                                        <span className={`text-sm font-medium px-2 py-1 rounded-full ${
+                                        skill.level > 75 ? 'bg-emerald-500/10 text-emerald-500' : 
+                                        skill.level > 50 ? 'bg-amber-500/10 text-amber-500' : 
+                                        'bg-blue-500/10 text-blue-500'
+                                        } `}>
+                                        {skill.level}%
+                                        </span>
+
+                                    </div>
+                                    <SkillBar level={skill.level} />
+                                    <div classNamee="mt-2 flex justify-between text-xs text-muted-foreground">
+                                        <span>Basic</span>
+                                        <span>Advanced</span>
+                                        <span>Expert</span>
+                                    </div>
+                                </div>
+                            </div>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                    </div> 
+            )}
         </div>
     </section>
-)
-}
+);
+}; 
