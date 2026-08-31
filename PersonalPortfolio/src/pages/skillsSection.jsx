@@ -3,19 +3,19 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 // import images 
-import AWS from "../components/icons /AWSLogo.png";
-import Azure from "../components/icons /AzureLogo.png"; 
-import Cplus from "../components/icons /cLogo.png"; 
-import CSS from "../components/icons /CSSLogo.png"; 
-import Docker from "../components/icons /DockerLogo.png"; 
-import Github from "../components/icons /githublogo.png"; 
-import Html from "../components/icons /HTMLLogo.png"; 
-import Java from "../components/icons /JavaLogo.png"; 
-import Javascript from "../components/icons /JavaScriptLogo.png"; 
-import Mysql from "../components/icons /MysqlLogo.png"; 
-import Python from "../components/icons /PythonLogo.png"; 
-import ReactLogo from "../components/icons /ReactLogo.png"; 
-import Redis from "../components/icons /RedisLogo.png"; 
+import AWS from "../components/icons/AWSLogo.png";
+import Azure from "../components/icons/AzureLogo.png"; 
+import Cplus from "../components/icons/cLogo.png"; 
+import CSS from "../components/icons/CSSLogo.png"; 
+import Docker from "../components/icons/DockerLogo.png"; 
+import Github from "../components/icons/githublogo.png"; 
+import Html from "../components/icons/HTMLLogo.png"; 
+import Java from "../components/icons/JavaLogo.jpg"; 
+import Javascript from "../components/icons/JavaScriptLogo.png"; 
+import Mysql from "../components/icons/MysqlLogo.png"; 
+import Python from "../components/icons/PythonLogo.png"; 
+import ReactLogo from "../components/icons/ReactLogo.png"; 
+import Redis from "../components/icons/RedisLogo.png"; 
 
 const skills = [ 
 
@@ -169,7 +169,7 @@ return (
                             <motion.div
                             key={skill.name}
                             layout 
-                            initial={{ opacity: 0; scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             className="bg-card p-6 rounded-2x1 border border-border/30 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg group"
