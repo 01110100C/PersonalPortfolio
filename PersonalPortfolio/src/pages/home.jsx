@@ -1,5 +1,4 @@
 import Card from "./Card";
-import SkillsSection from "./skillsSection";
 function Home() {
   return (
     <>
@@ -11,10 +10,6 @@ function Home() {
       
   </Card>
 
-  <Card>
-    <SkillsSection />
-  </Card>
-  
   <Card title="HOBBIES">
     <ul> 
       <li> Rock Climbing </li>

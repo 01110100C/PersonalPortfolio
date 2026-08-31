@@ -12,7 +12,6 @@ function Contact() {
     
       <ul> 
         <li> Email: taylercaufield@gmail.com</li>
-        <li>  Phone: (509)366-2478 </li>
         <li>  LinkedIn: https://www.linkedin.com/in/taylercaufield/ </li>
         <li>  GitHub: https://github.com/01110100C </li>
       </ul>
