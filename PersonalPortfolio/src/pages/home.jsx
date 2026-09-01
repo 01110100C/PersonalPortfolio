@@ -1,4 +1,5 @@
 import Card from "./Card";
+import Skillsgrid from "./Skillsgrid"; 
 function Home() {
   return (
     <>
@@ -8,6 +9,10 @@ function Home() {
   <div style={{ display: "flex", flexDirection: "row", gap: "75px", flexWrap: "wrap" }}>
   <Card title="ABOUT ME"> 
       
+  </Card>
+
+  <Card title="MY SKILLS">
+    <Skillsgrid />
   </Card>
 
   <Card title="HOBBIES">
