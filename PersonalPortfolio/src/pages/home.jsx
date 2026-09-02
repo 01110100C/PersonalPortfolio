@@ -24,6 +24,9 @@ function Home() {
       <li> Computer Hardware </li>
     </ul>
   </Card>
+
+  <Card title="EDUCATION AND CERTIFICATIONS">
+  </Card> 
  </div> 
    </>
   )
