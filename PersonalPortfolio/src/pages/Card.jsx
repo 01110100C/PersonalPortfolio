@@ -7,7 +7,7 @@ function Card({ title, children }) {
             padding: "24px", 
             boxShadow: "0 2px 8px rgba(0,0,0,0.08)", 
             backgroundColor: "#656669", 
-            width: "500px",
+            width: "600px",
             boxSizing: "border-box", 
         }}
         > 

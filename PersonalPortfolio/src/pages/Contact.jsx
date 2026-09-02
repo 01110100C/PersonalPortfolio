@@ -1,13 +1,15 @@
 import Card from "./Card"; 
-//import { MdEmail } from "react-icons/md"; 
-//import { FaPhoneAlt } from "react-icons/fa"; 
-//import { FaLinkedin } from "react-icons/fa"; 
-//import { FaGithub } from "react-icons/fa"; 
+import ContactEnvelope from "./Contactenvelope";
 function Contact() {
   return (
     <>
   <h1> Lets Connect! </h1>
-  <h2> Im currently open to new opportunities. </h2>
+  
+
+   <div style={{ textAlign:"center"}}> 
+    <h3 style={{ textAlign: "center", }}> Im currently open to new opportunities </h3>
+    <ContactEnvelope />
+   </div>
   <div> 
     
       <ul> 
