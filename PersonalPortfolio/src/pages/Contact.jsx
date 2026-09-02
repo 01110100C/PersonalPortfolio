@@ -1,5 +1,6 @@
 import Card from "./Card"; 
 import ContactEnvelope from "./Contactenvelope";
+import SocialLinks from "./Sociallinks";
 function Contact() {
   return (
     <>
@@ -9,17 +10,18 @@ function Contact() {
    <div style={{ textAlign:"center"}}> 
     <h3 style={{ textAlign: "center", }}> Im currently open to new opportunities </h3>
     <ContactEnvelope />
-   </div>
-  <div> 
-    
-      <ul> 
-        <li> Email: taylercaufield@gmail.com</li>
-        <li>  LinkedIn: https://www.linkedin.com/in/taylercaufield/ </li>
-        <li>  GitHub: https://github.com/01110100C </li>
-      </ul>
-    
-  </div>
 
+    <SocialLinks
+      github="https://github.com/01110100C"
+      linkedin="https://www.linkedin.com/in/taylercaufield/"
+      heading="Connect with me on GitHub and LinkedIn"
+      marginTop={60}
+      />
+    
+   </div>
+ 
+  
+   
     </>
   )
   
