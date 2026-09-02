@@ -5,24 +5,37 @@ const PLATFORMS = [
   { key: "linkedin", label: "LinkedIn", icon: "linkedin" },
 ];
  
-export default function SocialLinks({ 
-  github, 
-  linkedin, 
-  iconSize = 40,
+export default function SocialLinks({
+  github,
+  linkedin,
+  iconSize = 70,
   heading = "Connect with me on GitHub and LinkedIn",
-  marginTop = 40, 
+  marginTop = 60,
 }) {
   const urls = { github, linkedin };
  
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: 24,
-        padding: "24px 0",
-      }}
-    >
+    <div style={{ marginTop, textAlign: "center" }}>
+      {heading && (
+        <h3
+          style={{
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontSize: 16,
+            fontWeight: 600,
+            marginBottom: 12,
+          }}
+        >
+          {heading}
+        </h3>
+      )}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 24,
+          padding: "8px 0",
+        }}
+      >
       {PLATFORMS.map(({ key, label, icon }) => {
         const url = urls[key];
         if (!url) return null; // skip rendering if no link was provided
@@ -58,6 +71,7 @@ export default function SocialLinks({
           </a>
         );
       })}
+      </div>
     </div>
   );
 }

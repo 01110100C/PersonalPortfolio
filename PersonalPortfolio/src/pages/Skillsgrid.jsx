@@ -25,6 +25,7 @@ export default function SkillsGrid({ skills = DEFAULT_SKILLS, iconSize = 30 }) {
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(68px, 1fr))",
         gap: "10px 6px",
+        fontFamily: "IBM Plex Sans, sans-serif",
       }}
     >
       {skills.map((skill) => (

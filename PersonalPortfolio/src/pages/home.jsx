@@ -3,8 +3,8 @@ import Skillsgrid from "./Skillsgrid";
 function Home() {
   return (
     <>
-  <div className = "HomeHeader" style ={{ fontSize: "50px", textAlign: "center" }}> Tayler Caufield</div>
-  <div style={{ fontSize: "20px", marginBottom: "60px", textAlign: "center"}}> Software Developer </div>
+  <div className = "HomeHeader" style ={{ fontSize: "50px", textAlign: "center", fontFamily: "IBM Plex Sans, monospace" }}> Tayler Caufield</div>
+  <div style={{ fontSize: "20px", marginBottom: "60px", textAlign: "center", fontFamily: "IBM Plex Sans, sans-serif" }}> Software Developer </div>
   
   <div style={{ display: "flex", flexDirection: "row", gap: "75px", flexWrap: "wrap" }}>
   <Card title="ABOUT ME"> 
