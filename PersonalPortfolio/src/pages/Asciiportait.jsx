@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function AsciiPortrait({
   art,
   speed = 10,
-  color = "white",
+  color = "4fd8ff",
   fontSize = 3,
 }) {
   const lines = art.replace(/^\n/, "").split("\n");
