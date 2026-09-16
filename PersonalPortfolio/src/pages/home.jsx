@@ -26,6 +26,11 @@ function Home() {
       </div>
   <div style={{ display: "flex", flexDirection: "row", gap: "75px", flexWrap: "wrap" }}>
   <Card title="ABOUT ME"> 
+    <p style={{ color: "black "}}> Im a full-stack developer interested in building web and mobile apps with an interest in computer hardware. 
+      I enjoy learning new technologies and building projects that challenge me to grow as a developer. I have a passion for problem solving 
+      and enjoy working on projects that require creative solutions. I like to build prjects that help solve real world problems and can make peoples 
+      lives easier and more convient. Im always trying to learn new technologies and improve my skills as a software engineer. 
+    </p>
       
   </Card>
 
