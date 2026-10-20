@@ -22,7 +22,7 @@ function Home() {
           <div style={{ fontSize: "20px", textAlign: "center", fontFamily: "IBM Plex Sans, sans-serif" }}> Software Developer </div>
         </div>
 
-        <AsciiPortait art={MY_ASCII_ART} speed={25} />
+       
       </div>
   <div style={{ display: "flex", flexDirection: "row", gap: "75px", flexWrap: "wrap" }}>
   <Card title="ABOUT ME"> 

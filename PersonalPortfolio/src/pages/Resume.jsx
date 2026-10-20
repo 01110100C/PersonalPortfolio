@@ -1,5 +1,11 @@
 function Resume() {
-  return <div>Resume  Page</div>
+  return(
+    <>
+  <div>My Resume</div>
+
+
+  </>
+  )
 }
 
 export default Resume
