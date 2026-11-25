@@ -1,67 +1,95 @@
-import React from 'react'; 
 import Card from "./Card";
+import "./Projects.css";
+
+const PROJECTS = [
+  {
+    title: "POLL PAL",
+    status: "Meta Global AI Hackathon 2026",
+    summary:
+      "A civic-tech web app built with a teammate for the 2026 Meta Global AI Developer Hackathon. Poll Pal helps voters see which elections are coming up, what they need to do, and where and when to vote.",
+    highlights: [
+      "Built the React front end and connected it to an Express and Supabase backend, including full-address lookup to surface relevant local, county, state, and federal elections.",
+      "Developed an interactive ballot map using Mapbox that shows the nearest ballot drop-off locations.",
+      "Integrated Meta's Muse Spark model to translate the interface and ballot information, and built a side-by-side candidate comparison view.",
+      "Implemented user profiles, friend requests, an \"I Voted\" feature, and email reminders for registration and ballot deadlines.",
+    ],
+    stack: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "Supabase", "PostgreSQL", "Mapbox", "Meta Muse Spark"],
+    link: "https://github.com/albertcastillom/PollPalMetaHackathon",
+  },
+  {
+    title: "SEND IT",
+    status: "In Progress",
+    summary:
+      "A full-stack mobile and web app for rock climbers that brings climb logging, progress tracking, social features, and personalized training into one place.",
+    highlights: [
+      "Designed and built features that let climbers log climbs, track progress over time, and connect with friends.",
+      "Integrated an LLM-powered assistant that generates personalized training plans from a user's climbing history, grades, and goals.",
+      "Designed a relational PostgreSQL schema in Supabase for climb logs, user profiles, and friend connections.",
+    ],
+    stack: ["React Native", "Supabase", "PostgreSQL", "OpenAI"],
+    link: "https://github.com/01110100C/SENDIT",
+  },
+  {
+    title: "CARD COUNTER",
+    status: "Complete",
+    summary:
+      "A real-time computer vision system running on a Raspberry Pi that recognizes playing cards from a live camera feed and keeps a running count.",
+    highlights: [
+      "Built a recognition pipeline that identifies the rank and suit of cards as they are dealt, streamed to a web interface.",
+      "Used OpenCV for image preprocessing and contour detection, reaching 97% recognition accuracy.",
+      "Implemented a running-count algorithm that updates automatically and adjusts for the number of decks in play.",
+    ],
+    stack: ["Python", "OpenCV", "Raspberry Pi", "Pi Camera"],
+    link: "https://github.com/01110100C/Card-Counter",
+  },
+];
 
 function Projects() {
   return (
-  <>
-  <h1> My Projects </h1>
+    <div className="home">
+      <header className="home-hero">
+        <h1 className="home-hero__name">Projects</h1>
+        <div className="home-hero__role">
+          THINGS I&apos;VE BUILT
+          <span className="home-hero__cursor" aria-hidden="true">&nbsp;</span>
+        </div>
+      </header>
 
+      <div className="project-list">
+        {PROJECTS.map((project) => (
+          <Card key={project.title} title={project.title}>
+            <div className="project">
+              <span className="project__status">{project.status}</span>
+              <p className="project__summary">{project.summary}</p>
 
-<div style={{ display: "flex", flexDirection: "row", gap: "75px", flexWrap: "wrap" }}>
-  <Card title="Send It">
-    <h3 style={{ textAlign: "center"}}> Project Link: 
-      <a href="https://github.com/01110100C/SENDIT"
-      title="Send It"
-      target="_blank"
-      rel="noopener noreferrer"
-      >
-        Send It
-      </a>
-    </h3>
-    <p> Send it is a full stack web application that allows rock climbers
-      to log their daily climbs, connect with friends, find local gyms, compete with others, 
-      and get personalized training plans. This is an all-in-one application for rock climbers 
-      to use to easily have all the tools they need at the palm of their hand. </p>
+              <h3 className="project__label">Highlights</h3>
+              <ul className="project__highlights">
+                {project.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
 
-     <h2> Tech Stack </h2> 
-      <ul>
-        <li> React </li>
-        <li> Python </li>
-        <li> Supabase </li>
-        <li> Redis </li>
-      </ul>
-  </Card>
+              <h3 className="project__label">Tech Stack</h3>
+              <ul className="project__stack">
+                {project.stack.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
 
-  <Card title="Card Counter"> 
-    <h3 style={{ textAlign: "center"}}> Project Link: <a href="https://github.com/01110100C/Card-Counter" 
-    title="Card Counter" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    >
-      Card Counter
-      </a></h3>
-    <p> This project includes a raspberry pi, pi camera, openCV, and python. 
-      I created a website that live streams the camera and when cards are dealt in front of the camera, it can reconize the suit and 
-      value of the card. The software keeps track of which cards have been shown and keep a running count. You can enter how many decks are in the 
-      hand so it can more accurately keep track of the cards being shown. I used python and inputted images of the suits and values.  </p>
-
-<h2> Tech Stack </h2>
-<ul>
-  <li> Python </li>
-  <li> OpenCV </li>
-  <li> Raspberry Pi </li>
-  <li> Pi Camera </li>
-</ul>
-  </Card>
-
-  <Card title="Amazon Clone">
-
-  </Card>
-
-</div> 
-  
-  </>
-  )
+              <a
+                className="project__link"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub &gt;
+              </a>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Projects
+export default Projects;
