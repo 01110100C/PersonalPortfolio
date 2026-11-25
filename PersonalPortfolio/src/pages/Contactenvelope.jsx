@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 export default function ContactEnvelope({
   emailAddress = "taylercaufield@gmail.com",
-  accent = "#4a90d9",
+  accent = "#6f9bd6",
 }) {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -22,7 +22,7 @@ export default function ContactEnvelope({
   };
  
   return (
-    <div style={{ fontFamily: "inherit" }}>
+    <div style={{ fontFamily: '"IBM Plex Mono", ui-monospace, monospace' }}>
       {/* envelope + peeking paper, click to open the form */}
       {!open && (
         <button
@@ -60,11 +60,10 @@ export default function ContactEnvelope({
           >
             <span
               style={{
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.06em",
+                fontSize: 20,
+                letterSpacing: "0.08em",
                 color: "#2b2b2b",
-                fontFamily: '"Courier New", ui-monospace, monospace',
+                fontFamily: '"VT323", monospace',
               }}
             >
               EMAIL ME HERE
@@ -121,11 +120,11 @@ export default function ContactEnvelope({
               bottom: -22,
               left: "50%",
               transform: "translateX(-50%)",
-              fontSize: 11,
-              letterSpacing: "0.05em",
+              fontSize: 18,
+              letterSpacing: "0.08em",
               color: accent,
               whiteSpace: "nowrap",
-              fontFamily: '"Courier New", ui-monospace, monospace',
+              fontFamily: '"VT323", monospace',
             }}
           >
             click to open
@@ -148,11 +147,12 @@ export default function ContactEnvelope({
             display: "flex",
             flexDirection: "column",
             gap: 10,
-            fontFamily: '"Courier New", ui-monospace, monospace',
+            fontFamily: '"IBM Plex Mono", ui-monospace, monospace',
+            textAlign: "left",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", color: "#2b2b2b" }}>
+            <span style={{ fontFamily: '"VT323", monospace', fontSize: 22, letterSpacing: "0.08em", color: "#2b2b2b" }}>
               EMAIL ME
             </span>
             <button
@@ -231,10 +231,10 @@ export default function ContactEnvelope({
             type="submit"
             style={{
               marginTop: 4,
-              padding: "9px 12px",
-              fontSize: 13,
-              fontWeight: 700,
-              letterSpacing: "0.05em",
+              padding: "6px 12px",
+              fontFamily: '"VT323", monospace',
+              fontSize: 22,
+              letterSpacing: "0.1em",
               color: "#fff",
               background: accent,
               border: "none",

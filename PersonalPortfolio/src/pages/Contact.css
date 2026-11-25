@@ -1,0 +1,16 @@
+.contact {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact__intro {
+  margin-bottom: 28px !important;
+  max-width: 46ch;
+}

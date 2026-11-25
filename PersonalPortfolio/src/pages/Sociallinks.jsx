@@ -1,4 +1,3 @@
-import React from "react";
 
 const PLATFORMS = [
   { key: "github", label: "GitHub", icon: "github" },
@@ -19,9 +18,11 @@ export default function SocialLinks({
       {heading && (
         <h3
           style={{
-            fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: 16,
-            fontWeight: 600,
+            fontFamily: "'VT323', monospace",
+            fontSize: 24,
+            fontWeight: 400,
+            letterSpacing: "0.08em",
+            color: "#9cc3f5",
             marginBottom: 12,
           }}
         >
@@ -67,7 +68,7 @@ export default function SocialLinks({
               loading="lazy"
               style={{ display: "block" }}
             />
-            <span style={{ fontSize: 12 }}>{label}</span>
+            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, color: "#c3d4ea" }}>{label}</span>
           </a>
         );
       })}
