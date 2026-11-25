@@ -1,24 +1,20 @@
-function Card({ title, children }) { 
-    return ( 
-        <div 
-        style={{ 
-            border: "1px solid #bcbcc2", 
-            borderRadius: "12px", 
-            padding: "24px", 
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)", 
-            backgroundColor: "#656669", 
-            width: "600px",
-            boxSizing: "border-box", 
-        }}
-        > 
+import "./Card.css";
 
-        {title && ( 
-            <h2 style={{ fontSize: "24px", marginBottom: "12px", color: "Black", textAlign: "center"}}> {title} </h2>
-        )}
-        {children}
-        
+function Card({ title, children, className = "" }) {
+  return (
+    <section className={`retro-card ${className}`}>
+      {title && (
+        <div className="retro-card__bar">
+          <h2 className="retro-card__title">{title}</h2>
+          <div className="retro-card__controls" aria-hidden="true">
+            <span />
+            <span />
+          </div>
         </div>
-    )
+      )}
+      <div className="retro-card__body">{children}</div>
+    </section>
+  );
 }
 
-export default Card
+export default Card;

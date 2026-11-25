@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --crt-glow: #6f9bd6;
+  --crt-bright: #9cc3f5;
+  --crt-text: #c3d4ea;
+  --crt-muted: #7f95b3;
+  --crt-line: #3a5d8f;
+  --crt-panel: rgba(7, 12, 20, 0.78);
+  --crt-bar: #101f30;
+}
+
+/* ---------- Card: terminal window ---------- */
+.retro-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid var(--crt-line);
+  border-radius: 4px;
+  background: var(--crt-panel);
+  box-shadow:
+    0 0 0 1px #000,
+    0 0 18px rgba(111, 155, 214, 0.12),
+    inset 0 0 30px rgba(111, 155, 214, 0.05);
+  color: var(--crt-text);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.retro-card:hover {
+  border-color: var(--crt-glow);
+  box-shadow:
+    0 0 0 1px #000,
+    0 0 24px rgba(111, 155, 214, 0.25),
+    inset 0 0 30px rgba(111, 155, 214, 0.07);
+}
+
+.retro-card__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 12px;
+  background: var(--crt-bar);
+  border-bottom: 2px solid var(--crt-line);
+  font-family: "VT323", monospace;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: var(--crt-glow);
+  text-shadow: 0 0 4px rgba(111, 155, 214, 0.6);
+}
+
+.retro-card__title {
+  margin: 0;
+  font: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.retro-card__title::before {
+  content: "> ";
+  color: var(--crt-muted);
+}
+
+.retro-card__controls {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.retro-card__controls span {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--crt-line);
+  box-sizing: border-box;
+}
+
+.retro-card__body {
+  flex: 1;
+  padding: 20px 22px 22px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.retro-card__body p {
+  margin: 0;
+}
+
+.retro-card__body h2,
+.retro-card__body h3 {
+  color: var(--crt-bright);
+}
+
+.retro-card__body a {
+  color: var(--crt-bright);
+}
+
+/* ---------- Home page ---------- */
+.home {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.home-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-hero__name {
+  margin: 0;
+  font-family: "VT323", monospace;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--crt-bright);
+  text-shadow: 0 0 6px rgba(111, 155, 214, 0.8), 0 0 20px rgba(111, 155, 214, 0.35);
+}
+
+.home-hero__role {
+  margin-top: 8px;
+  font-family: "VT323", monospace;
+  font-size: 26px;
+  letter-spacing: 0.2em;
+  color: var(--crt-glow);
+}
+
+.home-hero__cursor {
+  display: inline-block;
+  width: 0.55em;
+  margin-left: 4px;
+  background: var(--crt-glow);
+  animation: home-blink 1.06s steps(1) infinite;
+}
+
+@keyframes home-blink {
+  50% { opacity: 0; }
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.home-grid__wide {
+  grid-column: 1 / -1;
+}
+
+/* About */
+.about-text + .about-text {
+  margin-top: 12px;
+}
+
+/* Hobbies */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 12px 14px;
+  border: 1px solid rgba(111, 155, 214, 0.25);
+  background: rgba(16, 31, 48, 0.55);
+  text-align: center;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.hobby:hover {
+  border-color: var(--crt-glow);
+  transform: translateY(-3px);
+}
+
+.hobby__screen {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  background: #050910;
+  border: 2px solid var(--crt-line);
+  box-shadow: inset 0 0 12px rgba(111, 155, 214, 0.15);
+}
+
+.hobby__name {
+  font-family: "VT323", monospace;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--crt-bright);
+}
+
+.hobby__caption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--crt-muted);
+}
+
+/* Education */
+.edu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.edu-item__tag {
+  flex-shrink: 0;
+  min-width: 64px;
+  padding: 2px 8px;
+  border: 1px solid var(--crt-line);
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--crt-glow);
+}
+
+.edu-item__title {
+  color: var(--crt-bright);
+  font-weight: 600;
+}
+
+.edu-item__sub {
+  font-size: 12px;
+  color: var(--crt-muted);
+}

@@ -23,9 +23,9 @@ export default function SkillsGrid({ skills = DEFAULT_SKILLS, iconSize = 30 }) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(68px, 1fr))",
-        gap: "10px 6px",
-        fontFamily: "IBM Plex Sans, sans-serif",
+        gridTemplateColumns: "repeat(auto-fill, minmax(72px, 1fr))",
+        gap: "16px 8px",
+        fontFamily: "IBM Plex Mono, monospace",
       }}
     >
       {skills.map((skill) => (
@@ -46,7 +46,7 @@ export default function SkillsGrid({ skills = DEFAULT_SKILLS, iconSize = 30 }) {
             loading="lazy"
             style={{ display: "block" }}
           />
-          <span style={{ fontSize: 10, textAlign: "center", color: "black" }}>
+          <span style={{ fontSize: 11, textAlign: "center", color: "#c3d4ea" }}>
             {skill.name}
           </span>
         </div>
